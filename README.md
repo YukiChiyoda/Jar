@@ -1,7 +1,8 @@
-<img width="150" height="150" style="float: left;" alt="Yuki" src="./.github/sign.gif">
+<img width="150" height="150" align="left" style="float: left;" alt="Yuki" src="./.github/sign.gif">
 
 # ユキのハニージャー  
-#### 🎶Yuki's Personal Blog!!~ [🚀Enter](http://me.ooo.cat)  
+#### 🎶Yuki's Personal Blog!!~  
+[🚀Enter](http://me.ooo.cat)  
 
 ## 🍪 Support
 + **Vue 3** for frontend  
