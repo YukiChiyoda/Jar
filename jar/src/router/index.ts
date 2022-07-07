@@ -7,9 +7,24 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/HomePage.vue')
   },
   {
+    path: '/s',
+    name: 'search',
+    component: () => import('../views/SearchPage.vue')
+  },
+  {
+    path: '/v',
+    name: 'view',
+    component: () => import('../views/ViewPage.vue')
+  },
+  {
     path: '/link',
     name: 'link',
     component: () => import('../views/LinkPage.vue')
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import('../views/AboutPage.vue')
   }
 ]
 

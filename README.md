@@ -6,6 +6,7 @@
 
 ## 🍪 Support
 + **Vue 3** for frontend  
++ **Element-Plus** for frontend  
 + **Golang** for backend  
 + **MarkDown** for plain text  
 + **MySQL** for database  
@@ -17,6 +18,6 @@
 
 ## ❓Why English / Japanese / not Chinese?
 + ~~It seems to be more professional.~~  
-+ ~~The author is truly twice-aped~~  
++ ~~The author is truly twice-aped.~~  
 + To improve my poor English😭.  
 + English is more friendly for communication in Github.  

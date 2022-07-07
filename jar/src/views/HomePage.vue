@@ -15,19 +15,19 @@
         </div>
         <div class="cake_line">
             <div class="cake_box">
-                <a href="#">
+                <a href="s?tag=frontend">
                     <div class="cake"></div>
                     <div class="text">前端设计</div>
                 </a>
             </div>
             <div class="cake_box">
-                <a href="#">
+                <a href="s?tag=backend">
                     <div class="cake"></div>
                     <div class="text">运维笔记</div>
                 </a>
             </div>
             <div class="cake_box">
-                <a href="#">
+                <a href="s?tag=life">
                     <div class="cake"></div>
                     <div class="text">喵言喵语</div>
                 </a>
@@ -36,8 +36,12 @@
         <div class="footer">
             <div class="button" id="show" @click="footerUnfold"><img src="./../assets/svg/more.svg"></div>
             <div :class="footerStyles" id="box" v-if="footerExpansion">
-                <div class="button" id="me"><img src="./../assets/svg/me.svg"></div>
-                <div class="button" id="link"><img src="./../assets/svg/link.svg"></div>
+                <a href="about">
+                    <div class="button" id="me"><img src="./../assets/svg/me.svg"></div>
+                </a>
+                <a href="link">
+                    <div class="button" id="link"><img src="./../assets/svg/link.svg"></div>
+                </a>
             </div>
         </div>
     </div>
@@ -45,7 +49,6 @@
 
 <script setup lang="ts">
 
-import { tupleExpression } from "@babel/types";
 import { computed, ref } from "vue";
 
 const footerExpansion = ref(0);
@@ -76,15 +79,16 @@ const cloudOffset = function (i: number) {
     };
 };
 
-tupleExpression
-const dull = new Array<[number, number]>();
-const mouseTrack = ref(dull);
+const mouseTrack = ref(new Array<[number, number]>());
 const mouseClickEvent = function (e: MouseEvent) {
     mouseTrack.value.push([e.x, e.y]);
+    console.warn("我推入了第%d个元素x坐标为%d", mouseTrack.value.length - 1, e.x);
     // I don't know how to recycle them... :(
-    // setTimeout(() => {
-    //     mouseTrack.value.shift();
-    // }, 1000);
+    // 一旦数组发生改变就会导致v-for重新渲染引发css动画重置不连贯，可能需要换种动画实现方式
+    setTimeout(() => {
+        let temp = mouseTrack.value.splice(0, 1);
+        console.error("我删除了第%d个元素x坐标为%d", 0, temp[0]);
+    }, 1000);
 };
 const sakuraOffset = function (i: number) {
     return {
