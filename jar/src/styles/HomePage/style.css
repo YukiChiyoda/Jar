@@ -276,9 +276,9 @@ body {
     height: 30px;
 }
 
-.footer .box {
-    /* opacity: 0; */
-}
+/* .footer .box {
+
+} */
 
 .footer .box_show {
     animation: box_show forwards 0.2s;

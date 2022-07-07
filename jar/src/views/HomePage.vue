@@ -45,6 +45,7 @@
 
 <script setup lang="ts">
 
+import { tupleExpression } from "@babel/types";
 import { computed, ref } from "vue";
 
 const footerExpansion = ref(0);
@@ -75,7 +76,9 @@ const cloudOffset = function (i: number) {
     };
 };
 
-const mouseTrack = ref([[0, 0]]);
+tupleExpression
+const dull = new Array<[number, number]>();
+const mouseTrack = ref(dull);
 const mouseClickEvent = function (e: MouseEvent) {
     mouseTrack.value.push([e.x, e.y]);
     // I don't know how to recycle them... :(
