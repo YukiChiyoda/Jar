@@ -1,0 +1,471 @@
+@font-face {
+    font-family: Title;
+    src: url('./../../../public/SourceHanSansCN.otf');
+}
+
+@font-face {
+    font-family: Tag;
+    src: url('./../../../public/SourceHanSansCN.otf');
+}
+
+/*
+	[Color Table]
+	#FFFAFA
+	#FFDDE1
+	#EE9CA7
+	#E35D72
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+a {
+    color: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFAFA;
+}
+
+.background {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.background .symbol {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 300px;
+    height: 300px;
+    opacity: 0.1;
+}
+
+.background .cloud {
+    position: absolute;
+    border-radius: 50%;
+}
+
+/*
+.background .circle{
+	position: absolute;
+	width: 25vw;
+	height: 25vw;
+	border-radius: 100%;
+	opacity: 0.2;
+	filter: blur(30px);
+}
+*/
+#cloud_A {
+    top: 10%;
+    left: 3%;
+    width: 120px;
+    height: 120px;
+    background-color: #FBEDC9;
+    box-shadow: #FBEDC9 130px -30px 5px -10px,
+        #FBEDC9 50px -50px 0px 0px,
+        #FBEDC9 60px 20px 0px 0px,
+        #FBEDC9 120px 30px 0px -20px,
+        #FBEDC9 170px 10px 0px -10px;
+    filter: blur(15px);
+    opacity: 0.5;
+}
+
+#cloud_B {
+    top: 12%;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    background-color: #FCB6D0;
+    box-shadow: #FCB6D0 170px -50px 0px -10px,
+        #FCB6D0 80px -30px 0px 0px,
+        #FCB6D0 60px 10px 0px 0px,
+        #FCB6D0 120px 30px 0px -20px,
+        #FCB6D0 170px 10px 0px -10px;
+    filter: blur(15px);
+    opacity: 0.5;
+}
+
+#cloud_C {
+    bottom: 5%;
+    left: 8%;
+    width: 180px;
+    height: 180px;
+    background-color: #ACBFEA;
+    box-shadow: #ACBFEA -130px 20px 0px 5px,
+        #ACBFEA -60px 50px 0px 0px,
+        #ACBFEA -60px -20px 0px 0px,
+        #ACBFEA -130px -20px 0px 50px,
+        #ACBFEA -100px -15px 0px 30px;
+    filter: blur(20px);
+    opacity: 0.3;
+}
+
+#cloud_D {
+    bottom: -2%;
+    right: 8%;
+    width: 120px;
+    height: 120px;
+    background-color: #ACE0DD;
+    box-shadow: #ACE0DD 100px -30px 0px -20px,
+        #ACE0DD 80px -25px 0px 0px,
+        #ACE0DD 25px 25px 0px 0px,
+        #ACE0DD 120px 30px 0px -30px,
+        #ACE0DD 70px 20px 0px -20px,
+        #ACE0DD 120px 20px 0px 20px;
+    filter: blur(15px);
+    opacity: 0.5;
+}
+
+.background .sakura {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    animation: sakura_fade forwards 1s;
+}
+
+@keyframes sakura_fade {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(20px) translateY(100px);
+        opacity: 0;
+    }
+}
+
+.text_line {
+    margin-top: 10vh;
+    width: 100%;
+    text-align: center;
+    font-family: Title;
+}
+
+.text_line .low_title {
+    display: inline-block;
+    position: relative;
+    bottom: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #EE9CA7;
+    font-size: 30px;
+    font-weight: 600;
+    border-bottom: solid 3px#EE9CA7;
+}
+
+.text_line .main_title {
+    display: inline-block;
+    position: relative;
+    font-size: 120px;
+    font-weight: 600;
+    letter-spacing: 10px;
+    background-image: -webkit-linear-gradient(left, #FFDDE1, #EE9CA7);
+    /* background-image: -webkit-linear-gradient(left, #EE9CA7, #E35D72); */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: title_show forwards 0.5s;
+}
+
+@keyframes title_show {
+    from {
+        font-size: 60px;
+    }
+
+    to {
+        font-size: 120px;
+    }
+}
+
+.cake_line {
+    width: 100%;
+    text-align: center;
+}
+
+.cake_line .cake_box {
+    display: inline-block;
+    width: 256px;
+}
+
+.cake_line .cake_box a {
+    cursor: pointer;
+}
+
+.cake_line .cake_box a:hover>.cake {
+    background-image: url('./../../assets/破れたケーキ.png');
+}
+
+.cake_line .cake_box a:hover>.text {
+    color: #E35D72;
+    text-shadow: none;
+}
+
+.cake_line .cake_box .cake {
+    height: 256px;
+    background-image: url('./../../assets/ケーキ.png');
+    background-size: 256px;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+}
+
+.cake_line .cake_box .text {
+    font-size: 36px;
+    font-weight: 600;
+    font-family: Tag;
+    color: #EE9CA7;
+    text-shadow: #E35D72 1px 1px 1px;
+    transition: all 0.2s;
+}
+
+.footer {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .button {
+    /*
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	*/
+    margin: 30px 20px 30px 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #EE9CA7;
+    box-shadow: #DE929C 3px 3px 1px;
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+.footer .button:hover {
+    transform: translateY(-10px);
+}
+
+.footer .button img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 30px;
+    height: 30px;
+}
+
+.footer .box {
+    /* opacity: 0; */
+}
+
+.footer .box_show {
+    animation: box_show forwards 0.2s;
+    /* opacity: 1; */
+}
+
+.footer .box_hide {
+    animation: box_hide forwards 0.2s;
+    /* opacity: 0; */
+}
+
+@keyframes box_show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes box_hide {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.footer .box .button {
+    /*
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	*/
+    margin: 0;
+    margin-right: 10px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #FFC2CA;
+    box-shadow: #DE929C 1px 1px 1px;
+}
+
+.footer .box .button:hover {
+    transform: translateY(-5px);
+    box-shadow: #E35D72 2px 2px 3px;
+}
+
+.footer .box .button img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 28px;
+    height: 28px;
+}
+
+@media screen and (max-width: 700px) {
+    .text_line {
+        margin-top: 20vh;
+    }
+
+    .text_line .low_title {
+        bottom: 0;
+        font-size: 13px;
+        border-bottom: solid 2px #EE9CA7;
+    }
+
+    .text_line .main_title {
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+
+    @keyframes title_show {
+        from {
+            font-size: 30px;
+        }
+
+        to {
+            font-size: 40px;
+        }
+    }
+
+    .cake_line {
+        margin-top: 10vh;
+    }
+
+    .cake_line .cake_box {
+        width: 96px;
+    }
+
+    .cake_line .cake_box .cake {
+        height: 96px;
+        background-size: 96px;
+    }
+
+    .cake_line .cake_box .text {
+        font-size: 16px;
+        text-shadow: none;
+    }
+
+    .background .symbol {
+        width: 75vw;
+        height: 75vw;
+    }
+
+    .background .cloud {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    #cloud_A {
+        top: 3%;
+        left: -3%;
+        width: 60px;
+        height: 60px;
+        box-shadow: #FBEDC9 750px -15px 3px -5px,
+            #FBEDC9 25px -25px 0px 0px,
+            #FBEDC9 30px 10px 0px 0px,
+            #FBEDC9 60px 30px 0px -10px,
+            #FBEDC9 85px 5px 0px -5px;
+    }
+
+    #cloud_B {
+        top: 8%;
+        right: 10%;
+        width: 75px;
+        height: 75px;
+        box-shadow: #FCB6D0 85px -25px 0px -5px,
+            #FCB6D0 40px -15px 0px 0px,
+            #FCB6D0 30px 5px 0px 0px,
+            #FCB6D0 60px 15px 0px -10px,
+            #FCB6D0 85px 5px 0px -5px;
+    }
+
+    #cloud_C {
+        bottom: 5%;
+        left: 15%;
+        width: 90px;
+        height: 90px;
+        box-shadow: #ACBFEA -75px 10px 0px 5px,
+            #ACBFEA -30px 25px 0px 0px,
+            #ACBFEA -30px -10px 0px 0px,
+            #ACBFEA -65px -30px 0px 25px,
+            #ACBFEA -50px -10px 0px 15px;
+    }
+
+    #cloud_D {
+        bottom: 10%;
+        right: 10%;
+        width: 60px;
+        height: 60px;
+        box-shadow: #ACE0DD 50px -15px 0px -10px,
+            #ACE0DD 40px -20px 0px 0px,
+            #ACE0DD 20px 10px 0px 0px,
+            #ACE0DD 60px 15px 0px -15px,
+            #ACE0DD 35px 10px 0px -10px,
+            #ACE0DD 60px 10px 0px 10px;
+    }
+
+    .background .sakura {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer .button {
+        margin: 20px 15px 20px 15px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer .box img {
+        width: 23px;
+        height: 23px;
+    }
+
+    .footer .box .button {
+        margin-right: 8px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer .box .button img {
+        width: 22px;
+        height: 22px;
+    }
+}
