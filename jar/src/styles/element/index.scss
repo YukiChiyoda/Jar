@@ -1,0 +1,66 @@
+$--colors: (
+  'white': #FFFAFA,
+  'black': #694A4F,
+  "primary": ("base":#E88E9D,
+  ),
+  "success": ("base": #EE9CA7,
+  ),
+  "warning": ("base": #FF998F,
+  ),
+  "danger": ("base": #A32A51,
+  ),
+  "error": ("base": #962F3E,
+  ),
+  "info": ("base": #E38768,
+  ),
+);
+
+$--bg-color: (
+  '': #FFFAFA,
+  'page': #FFDDE1,
+  'overlay': #FFFAFA,
+);
+
+$--border-color: (
+  '': #FFDDE1,
+  'light': #FFDDE1,
+  'lighter': #FFDDE1,
+  'extra-light': #FFDDE1,
+);
+
+$--box-shadow: (
+  '': (rgba(222, 146, 156, 0.3) 1px 1px 3px,
+  ),
+  'light': (rgba(222, 146, 156, 0.3) 1px 1px 3px,
+  ),
+  'lighter': (rgba(222, 146, 156, 0.3) 1px 1px 3px,
+  ),
+);
+
+$--fill-color: (
+  '': #FFDDE1,
+  'light': #FFDDE1,
+  'lighter': #FFDDE1,
+  'extra-light': #FFDDE1,
+  'blank': #FFFAFA,
+);
+
+$--text-color: (
+  ('primary': #E88E9D,
+    'regular': #EE9CA7,
+    'secondary': #FF998F,
+    'placeholder': #E3A59F,
+    'disabled': #FFDEDB,
+  )
+);
+
+@forward "element-plus/theme-chalk/src/common/var.scss" with ( // Silly Code Beautify
+  $colors: $--colors,
+  $bg-color: $--bg-color,
+  $box-shadow: $--box-shadow,
+  $border-color: $--border-color,
+  $fill-color: $--fill-color,
+  $text-color: $--text-color,
+  $button-padding-horizontal: ("default": 20px));
+
+@use "element-plus/theme-chalk/src/index.scss" as *;

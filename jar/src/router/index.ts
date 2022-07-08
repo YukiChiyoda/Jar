@@ -17,8 +17,8 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/ViewPage.vue')
   },
   {
-    path: '/link',
-    name: 'link',
+    path: '/friends',
+    name: 'friends',
     component: () => import('../views/LinkPage.vue')
   },
   {

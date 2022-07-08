@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-main></el-main>
+        <el-main>时间线时间线</el-main>
     </div>
 </template>
 

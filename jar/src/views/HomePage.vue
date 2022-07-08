@@ -39,8 +39,11 @@
                 <a href="about">
                     <div class="button" id="me"><img src="./../assets/svg/me.svg"></div>
                 </a>
-                <a href="link">
-                    <div class="button" id="link"><img src="./../assets/svg/link.svg"></div>
+                <a href="friends">
+                    <div class="button" id="friends"><img src="./../assets/svg/link.svg"></div>
+                </a>
+                <a href="https://github.com/YukiChiyoda/Jar">
+                    <div class="button" id="github"><img src="./../assets/svg/github.svg"></div>
                 </a>
             </div>
         </div>
@@ -68,14 +71,20 @@ const mouseMoveEvent = function (e: MouseEvent) {
     mousePosition.value = [e.x, e.y];
 };
 const cloudOffset = function (i: number) {
-    var offset = [
+    const offset = [[
         mousePosition.value[0] / 5,
         -mousePosition.value[0] / 3,
         mousePosition.value[0] / 10,
         -mousePosition.value[0] / 10
-    ];
+    ], [
+        mousePosition.value[1] / 30,
+        mousePosition.value[1] / 50,
+        mousePosition.value[1] / 5,
+        -mousePosition.value[1] / 10
+    ]];
     return {
-        transform: "translateX(" + offset[i] + "px)"
+        transform: "translateX(" + offset[0][i] + "px)"
+            + "translateY(" + offset[1][i] + "px)"
     };
 };
 
@@ -86,7 +95,7 @@ const mouseClickEvent = function (e: MouseEvent) {
     // I don't know how to recycle them... :(
     // 一旦数组发生改变就会导致v-for重新渲染引发css动画重置不连贯，可能需要换种动画实现方式
     setTimeout(() => {
-        let temp = mouseTrack.value.splice(0, 1);
+        const temp = mouseTrack.value.splice(0, 1);
         console.error("我删除了第%d个元素x坐标为%d", 0, temp[0]);
     }, 1000);
 };
@@ -100,5 +109,5 @@ const sakuraOffset = function (i: number) {
 </script>
 
 <style lang="scss" scoped>
-@import url('./../styles/HomePage/style.css');
+@import url('./../styles/HomePage/style.scss');
 </style>
