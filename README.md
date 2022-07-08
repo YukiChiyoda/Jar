@@ -25,3 +25,5 @@
 ## 📷 How does it look like now?
 ![ScreenShot](./.github/demo.png)   
 ![ScreenShot](./.github/demo-SearchPage.png)   
+![ScreenShot](./.github/demo-LinkPage.png)   
+![ScreenShot](./.github/demo-AboutPage.png)   
