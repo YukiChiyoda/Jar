@@ -21,8 +21,7 @@
 
             <el-main>
                 <el-timeline>
-                    <el-timeline-item v-for="(item, index) in timeLine" :key="index" :timestamp="item.time"
-                        placement="top">
+                    <el-timeline-item v-for="(item, index) in temp" :key="index" :timestamp="item.time" placement="top">
                         <el-card>
                             <h4>{{ item.title }}</h4>
                             <p>{{ item.detail }}</p>
@@ -42,8 +41,9 @@
 
 <script setup lang="ts">
 
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { ArrowRight } from "@element-plus/icons-vue";
+import { timeLineQuery } from "./../request/api";
 
 const mousePosition = ref([0, 0]);
 const mouseMoveEvent = (e: MouseEvent) => {
@@ -57,24 +57,25 @@ const patternWaving = computed(() => {
     };
 });
 
-const timeLine = [
-    {
-        time: '2018-08-08',
-        title: "远古锚点",
-        detail: "迄今为止考古发现的最早时间节点，可能是从那时开始搭建博客的...",
-        size: 'large',
-        type: 'primary',
-        hollow: true,
-    },
-    {
-        time: '2018-08-13',
-        title: "梦的开始",
-        detail: "写下了第一篇博文《酷Q插件用户报错指南》，反响似乎还不错！",
-        size: 'large',
-        type: 'primary',
-        hollow: true,
-    },
-];
+class timeLine {
+    index: number;
+    time: string;
+    title: string;
+    detail: string;
+    constructor() {
+        this.index = 0;
+        this.time = "";
+        this.title = "";
+        this.detail = "";
+    }
+}
+
+const temp = ref(new Array<timeLine>());
+const goQuery = onMounted(() => {
+    timeLineQuery().then((res) => {
+        temp.value = JSON.parse(JSON.stringify(res));
+    });
+});
 
 </script>
 

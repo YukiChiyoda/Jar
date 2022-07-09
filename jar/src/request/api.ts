@@ -4,6 +4,10 @@ export function linkQuery() {
     return service.get("/LinkQuery.go");
 }
 
+export function timeLineQuery() {
+    return service.get("/TimeLineQuery.go");
+}
+
 interface searchData {
     limitExpression: Array<string>;
 }
