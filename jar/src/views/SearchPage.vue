@@ -1,7 +1,7 @@
 <template>
-    <div class="page" @mousemove="mouseMoveEvent">
+    <div class="-page" @mousemove="mouseMoveEvent">
 
-        <div class="pattern">
+        <div class="-pattern">
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path
                     d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
@@ -73,7 +73,7 @@
                     </el-col>
                 </el-row>
                 <!-- </el-space> -->
-                <el-pagination layout="prev, pager, next" :page-size="pageSize" :pager-count="11"
+                <el-pagination layout="prev, pager, next" :page-size="pageSize" :pager-count="5"
                     :total="resultList.length" :current-page="currentPage" @update:current-page="currentChange"
                     hide-on-single-page background />
             </el-main>
@@ -92,8 +92,19 @@
 import { onMounted, ref, h, computed } from "vue";
 import { Plus, Search, ArrowRight } from "@element-plus/icons-vue";
 import { ElMessage, ElMessageBox, ElDivider } from 'element-plus';
-import { randomUUID } from "crypto";
 import { random, result } from "lodash";
+
+const mousePosition = ref([0, 0]);
+const mouseMoveEvent = (e: MouseEvent) => {
+    mousePosition.value = [e.x, e.y];
+};
+const patternWaving = computed(() => {
+    const offset = [-mousePosition.value[0] / 30, mousePosition.value[1] / 20];
+    return {
+        transform: "translateX(" + offset[0] + "px)" +
+            "translateY(" + offset[1] + "px)"
+    };
+});
 
 const keyString = ref("");
 const selectExpression = ref("any=");
@@ -206,18 +217,6 @@ const currentPage = ref(1);
 const currentChange = (i: number) => {
     currentPage.value = i;
 };
-
-const mousePosition = ref([0, 0]);
-const mouseMoveEvent = (e: MouseEvent) => {
-    mousePosition.value = [e.x, e.y];
-};
-const patternWaving = computed(() => {
-    const offset = [-mousePosition.value[0] / 30, mousePosition.value[1] / 20];
-    return {
-        transform: "translateX(" + offset[0] + "px)" +
-            "translateY(" + offset[1] + "px)"
-    };
-});
 
 </script>
 

@@ -55,22 +55,20 @@
 import { computed, ref } from "vue";
 
 const footerExpansion = ref(0);
-const footerUnfold = function () {
+const footerUnfold = () => {
     footerExpansion.value ^= 1;
 };
-const footerStyles = computed(() => {
-    return {
-        box: 1,
-        box_show: footerExpansion.value,
-        box_hide: footerExpansion.value ^ 1
-    };
-});
+const footerStyles = computed(() => ({
+    box: 1,
+    box_show: footerExpansion.value,
+    box_hide: footerExpansion.value ^ 1
+}));
 
 const mousePosition = ref([0, 0]);
-const mouseMoveEvent = function (e: MouseEvent) {
+const mouseMoveEvent = (e: MouseEvent) => {
     mousePosition.value = [e.x, e.y];
 };
-const cloudOffset = function (i: number) {
+const cloudOffset = (i: number) => {
     const offset = [[
         mousePosition.value[0] / 5,
         -mousePosition.value[0] / 3,
@@ -89,7 +87,7 @@ const cloudOffset = function (i: number) {
 };
 
 const mouseTrack = ref(new Array<[number, number]>());
-const mouseClickEvent = function (e: MouseEvent) {
+const mouseClickEvent = (e: MouseEvent) => {
     mouseTrack.value.push([e.x, e.y]);
     console.warn("我推入了第%d个元素x坐标为%d", mouseTrack.value.length - 1, e.x);
     // I don't know how to recycle them... :(
@@ -99,12 +97,10 @@ const mouseClickEvent = function (e: MouseEvent) {
         console.error("我删除了第%d个元素x坐标为%d", 0, temp[0]);
     }, 1000);
 };
-const sakuraOffset = function (i: number) {
-    return {
-        left: mouseTrack.value[i][0] + "px",
-        top: mouseTrack.value[i][1] + "px"
-    };
-};
+const sakuraOffset = (i: number) => ({
+    left: mouseTrack.value[i][0] + "px",
+    top: mouseTrack.value[i][1] + "px"
+});
 
 </script>
 
