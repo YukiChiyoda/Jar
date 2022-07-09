@@ -1,9 +1,15 @@
 ::selection {
-    background-color: #FFDDE1;
+    background-color: var(--el-fill-color);
 }
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+a {
+    color: none;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .-page {
@@ -31,7 +37,7 @@
 }
 
 .-pattern .fill {
-    fill: #FFDDE1;
+    fill: var(--el-fill-color);
 }
 
 .el-container {
@@ -64,4 +70,8 @@
     text-align: right;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+.el-empty__description p {
+    color: var(--el-text-color-primary);
 }
