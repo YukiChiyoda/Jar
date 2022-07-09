@@ -2,6 +2,10 @@
 node_modules
 /dist
 
+#Unlimited Fonts
+/public/fonts/
+!/public/fonts/SourceHanSansCN-limit.ttf
+
 # local env files
 .env.local
 .env.*.local
@@ -20,7 +24,3 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-
-#Unlimited Fonts
-/public/fonts
-!/public/fonts/SourceHanSansCN-limit.ttf

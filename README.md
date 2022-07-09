@@ -5,15 +5,15 @@
 [🚀Enter](http://me.ooo.cat)  
 
 ## 🍪 Support
-+ **Vue 3** for frontend  
++ **Vue3** for frontend  
 + **Element-Plus** for frontend  
 + **Golang** for backend  
 + **MarkDown** for plain text  
-+ **MySQL** for database  
++ **SQLite3** for database  
 
 ## 🐱 Permission
-+ The frontend code is opensouced to those who obey [📕Yuki's Selfish License](./LICENSE).  
-+ The backend code is private, but my friends can take a view.  
++ The [frontend](https://github.com/YukiChiyoda/Jar) code is opensouced to those who obey [📕Yuki's Selfish License](./LICENSE).  
++ The [backend](https://github.com/YukiChiyoda/Jar-Backend) code is private, but my friends can take a view. [📕Yuki's Unfair License](./LICENSE)  
 + **Thank you for helping me find bugs or suggestions! [❤️Raise An Issue](https://github.com/YukiChiyoda/Jar/issues)**  
 
 ## ❓ Why English / Japanese / not Chinese?
