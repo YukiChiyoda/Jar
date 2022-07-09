@@ -1,10 +1,7 @@
 import service from ".";
 
-export function queryFriend() {
-    return service({
-        url: "/",
-        method: "get"
-    });
+export function linkQuery() {
+    return service.get("/LinkQuery.go");
 }
 
 interface searchData {

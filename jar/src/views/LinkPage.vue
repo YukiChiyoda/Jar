@@ -23,11 +23,11 @@
                 <div v-infinite-scroll="loadMore" class="infinite-list" style="overflow: auto">
                     <el-row v-for="(item, index) in linkList.slice(0, currentLoad)" :key="index">
                         <el-col :span="4" :offset="2" :xs="{ span: 4, offset: 0 }">
-                            <el-avatar :icon="UserFilled" />
+                            <el-avatar :icon="UserFilled" fit="fill" :alt="item.name" :src="item.avatar" />
                         </el-col>
                         <el-col :span="6" :offset="2" :xs="{ span: 8, offset: 0 }" style="align-items: flex-start;">
-                            <el-link type="primary">{{ item.name }}</el-link>
-                            <el-link type="success">{{ item.herf }}</el-link>
+                            <el-link type="primary" :href="item.herf">{{ item.name }}</el-link>
+                            <el-link type="success" :href="item.herf">{{ item.herf }}</el-link>
                         </el-col>
                         <el-col :span="8" :xs="{ span: 12, offset: 0 }">
                             {{ item.info }}
@@ -51,6 +51,7 @@
 
 import { ref, computed, onMounted, reactive, toRefs } from "vue";
 import { ArrowRight, UserFilled } from "@element-plus/icons-vue";
+import { linkQuery } from "./../request/api";
 
 const mousePosition = ref([0, 0]);
 const mouseMoveEvent = (e: MouseEvent) => {
@@ -80,21 +81,16 @@ class linkDetail {
 }
 const linkList = ref(new Array<linkDetail>());
 const goQuery = onMounted(() => {
-    linkList.value = new Array<linkDetail>()
-    const n = Math.random() * 100;
-    for (let i = 0; i < n; i++) {
-        let temp = new linkDetail();
-        temp.index = 0;
-        temp.avatar = "test.jpg";
-        temp.name = "工具人" + i + "号";
-        temp.info = "喵的好朋友工具人";
-        temp.herf = "https://bilibili.com";
-        linkList.value.push(temp);
-    }
+    linkQuery().then((res) => {
+        linkList.value = JSON.parse(JSON.stringify(res));
+        linkList.value.sort(function () { return Math.random() - 0.5 });
+    });
 });
 const currentLoad = ref(10);
 const loadMore = () => {
-    currentLoad.value += 5;
+    if (currentLoad.value < linkList.value.length) {
+        currentLoad.value += 5;
+    }
 };
 
 </script>

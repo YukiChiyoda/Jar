@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const service = axios.create({
-    baseURL: "http://localhost:233/api",
+    baseURL: "http://localhost:2048",
     timeout: 5000,
     headers: {
         "Context-Type": "application/json; charset=utf-8"
@@ -10,21 +10,23 @@ const service = axios.create({
 
 // Token for user system in the future.
 service.interceptors.request.use((config) => {
-    config.headers = config.headers || {};
-    if (localStorage.getItem("token")) {
-        config.headers.token = localStorage.getItem("token") || ""
+    const token = sessionStorage.getItem("token");
+    if (token) {
+        config.headers = {
+            ...config.headers,
+            token
+        }
     }
     return config;
 });
 
-service.interceptors.response.use((res) => {
-    const httpStatusCode: number = res.data.code;
-    if (httpStatusCode != 200) {
-        return Promise.reject(res.data);
-    }
-    return res.data;
-}, (err) => {
-    console.error(err);
-});
+service.interceptors.response.use(
+    (res) => {
+        return res.data;
+    },
+    (err) => {
+        console.error(err);
+        return Promise.reject(err);
+    });
 
 export default service;
