@@ -27,7 +27,9 @@
                         </el-col>
                         <el-col :span="6" :offset="2" :xs="{ span: 8, offset: 0 }" style="align-items: flex-start;">
                             <el-link type="primary" :href="item.herf">{{  item.name  }}</el-link>
-                            <el-link type="success" :href="item.herf">{{  item.herf  }}</el-link>
+                            <el-link type="success" :href="item.herf">{{
+                                 parseDomain(item.herf)  }}
+                            </el-link>
                         </el-col>
                         <el-col :span="8" :xs="{ span: 12, offset: 0 }">
                             {{  item.info  }}
@@ -92,6 +94,11 @@ const loadMore = () => {
         currentLoad.value += 5;
     }
 };
+const parseDomain = (url: string) => {
+    let exp = /[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?/;
+    let temp = exp.exec(url) || [];
+    return temp === [] ? "" : temp[0];
+}
 
 </script>
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const service = axios.create({
-    baseURL: "/api",
+    baseURL: process.env.NODE_ENV === 'production' ? "/api" : "http://127.1:2048/api",
     timeout: 5000,
     headers: {
         "Context-Type": "application/json; charset=utf-8"
