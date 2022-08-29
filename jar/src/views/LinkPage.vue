@@ -27,9 +27,7 @@
                         </el-col>
                         <el-col :span="6" :offset="2" :xs="{ span: 8, offset: 0 }" style="align-items: flex-start;">
                             <el-link type="primary" :href="item.herf">{{  item.name  }}</el-link>
-                            <el-link type="success" :href="item.herf">{{
-                                 parseDomain(item.herf)  }}
-                            </el-link>
+                            <el-link type="success" :href="item.herf">{{  parseDomain(item.herf)  }} </el-link>
                         </el-col>
                         <el-col :span="8" :xs="{ span: 12, offset: 0 }">
                             {{  item.info  }}
