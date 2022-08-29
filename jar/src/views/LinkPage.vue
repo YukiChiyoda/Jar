@@ -26,11 +26,11 @@
                             <el-avatar :icon="UserFilled" fit="fill" :alt="item.name" :src="item.avatar" />
                         </el-col>
                         <el-col :span="6" :offset="2" :xs="{ span: 8, offset: 0 }" style="align-items: flex-start;">
-                            <el-link type="primary" :href="item.herf">{{ item.name }}</el-link>
-                            <el-link type="success" :href="item.herf">{{ item.herf }}</el-link>
+                            <el-link type="primary" :href="item.herf">{{  item.name  }}</el-link>
+                            <el-link type="success" :href="item.herf">{{  item.herf  }}</el-link>
                         </el-col>
                         <el-col :span="8" :xs="{ span: 12, offset: 0 }">
-                            {{ item.info }}
+                            {{  item.info  }}
                         </el-col>
                     </el-row>
                     <!-- <el-skeleton :rows="3" animated /> -->
@@ -49,7 +49,7 @@
 
 <script setup lang="ts">
 
-import { ref, computed, onMounted, reactive, toRefs } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { ArrowRight, UserFilled } from "@element-plus/icons-vue";
 import { linkQuery } from "./../request/api";
 

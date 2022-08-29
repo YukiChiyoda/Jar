@@ -1,1 +1,119 @@
 @import url('./../public/style.scss');
+
+body {
+    overflow: hidden;
+}
+
+.-page {
+    display: inherit;
+}
+
+.ocean {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--el-fill-color);
+    z-index: -233;
+}
+
+.ocean .wave {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 300vh;
+    height: 300vh;
+    transform: translate(-16%, -80%);
+    border-radius: 40%;
+    background-color: var(--el-color-primary-light-9);
+    animation: wave_action 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes wave_action {
+    100% {
+        transform: translate(-16%, -80%) rotate(360deg);
+    }
+}
+
+.ocean .bubble {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 100px;
+    bottom: 200px;
+    border-radius: 50%;
+    background-color: var(--el-color-primary-light-9);
+    animation: bubble_action 5s ease-in infinite;
+    opacity: 0;
+    z-index: -1;
+}
+
+.ocean .bubble:nth-child(1) {
+    width: 50px;
+    height: 50px;
+    left: 100px;
+    bottom: 200px;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+.ocean .bubble:nth-child(2) {
+    width: 30px;
+    height: 30px;
+    left: 200px;
+    bottom: 200px;
+    animation-duration: 2s;
+    animation-delay: 2s;
+}
+
+.ocean .bubble:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    left: 250px;
+    bottom: 100px;
+    animation-duration: 6s;
+    animation-delay: 0s;
+}
+
+.ocean .bubble:nth-child(4) {
+    width: 30px;
+    height: 30px;
+    left: 300px;
+    bottom: 150px;
+    animation-duration: 3s;
+    animation-delay: 1.5s;
+}
+
+.ocean .bubble:nth-child(5) {
+    width: 20px;
+    height: 20px;
+    left: 80px;
+    bottom: 200px;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+
+@keyframes bubble_action {
+    0% {
+        transform: translateX(0px) scale(1);
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1.0;
+        transform: translateX(10px);
+    }
+
+    40% {
+        transform: translateX(50px) scale(0.8);
+    }
+
+    100% {
+        bottom: 100vh;
+        transform: translateX(-50px);
+        opacity: 0.6;
+    }
+}

@@ -45,7 +45,7 @@
                 <el-row justify="center">
                     <!-- <el-space size="small" :spacer="h(ElDivider, { direction: 'vertical' })"> -->
                     <el-tag type="info" size="large" effect="light" v-for="(item, index) in targetExpression"
-                        :key="index" closable @close="popExpression(index)" round>{{ item }}
+                        :key="index" closable @close="popExpression(index)" round>{{  item  }}
                     </el-tag>
                     <!-- </el-space> -->
                 </el-row>
@@ -65,10 +65,10 @@
                         <el-card class="box-card" :style="getBackgroundStyle(index)">
                             <template #header>
                                 <div class="card-header">
-                                    <span>{{ item.title }}</span>
+                                    <span>{{  item.title  }}</span>
                                 </div>
                             </template>
-                            {{ item.description }}
+                            {{  item.description  }}
                         </el-card>
                     </el-col>
                 </el-row>
@@ -89,10 +89,9 @@
 
 <script setup lang="ts">
 
-import { onMounted, ref, h, computed } from "vue";
+import { onMounted, ref, computed } from "vue";
 import { Plus, Search, ArrowRight } from "@element-plus/icons-vue";
-import { ElMessage, ElMessageBox, ElDivider } from 'element-plus';
-import { random, result } from "lodash";
+import { ElMessage, ElMessageBox } from 'element-plus';
 
 const mousePosition = ref([0, 0]);
 const mouseMoveEvent = (e: MouseEvent) => {
