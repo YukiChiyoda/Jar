@@ -27,6 +27,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/AboutPage.vue')
   },
   {
+    path: '/game',
+    name: 'game',
+    component: () => import('../views/GamePage.vue')
+  },
+  {
     path: '/:pathMatch(.*)',
     name: '404',
     component: () => import('../views/ErrorPage.vue')
