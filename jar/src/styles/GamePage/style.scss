@@ -65,12 +65,12 @@ a {
 }
 
 .game .bar .active {
-    background-color: #FA8072;
+    background-image: linear-gradient(45deg, #FA7172, #FA8072);
     /* background-image: url('./../../public/img/yuki.jpg');*/
 }
 
 .game .bar .wrong {
-    background-color: #E35D72;
+    background-image: linear-gradient(75deg, #E35D52, #E35D72);
     /* background-image: url('');*/
 }
 
