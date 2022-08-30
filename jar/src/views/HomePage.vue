@@ -42,6 +42,9 @@
                 <a href="friends">
                     <div class="button" id="friends"><img src="./../assets/svg/link.svg"></div>
                 </a>
+                <a href="game">
+                    <div class="button" id="game"><img src="./../assets/svg/game.svg"></div>
+                </a>
                 <a href="https://github.com/YukiChiyoda/Jar">
                     <div class="button" id="github"><img src="./../assets/svg/github.svg"></div>
                 </a>
