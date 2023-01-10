@@ -1,0 +1,54 @@
+::selection {
+    background-color: var(--el-color-primary-light-5);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    color: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.-page {
+    display: flex;
+    justify-content: center;
+    color: var(--el-color-primary);
+}
+
+/*
+.el-container {
+    margin-top: 20px;
+    min-width: 60%;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+*/
+
+@media screen and (max-width: 768px) {
+    .el-aside {
+        display: none;
+    }
+}
+
+.el-menu {
+    user-select: none;
+    --el-menu-bg-color: var(--el-fill-color);
+    border-bottom: 1px solid var(--el-border-color-high);
+    box-shadow: var(--el-box-shadow-full);
+}
+
+.el-footer {
+    padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.el-empty__description p {
+    color: var(--el-text-color-primary);
+}

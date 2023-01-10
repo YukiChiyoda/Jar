@@ -26,6 +26,8 @@ $--border-color: (
   'light': #FFDDE1,
   'lighter': #FFDDE1,
   'extra-light': #FFDDE1,
+  'high': #FFBDC4,
+  'higher': #E8A8A0,
 );
 
 $--box-shadow: (
@@ -35,13 +37,15 @@ $--box-shadow: (
   ),
   'lighter': (rgba(222, 146, 156, 0.3) 1px 1px 3px,
   ),
+  'full': (rgba(222, 146, 156, 0.3) 1px 1px 3px,
+    rgba(222, 146, 156, 0.3) -1px 1px 3px),
 );
 
 $--fill-color: (
   '': #FFDDE1,
-  'light': #FFDDE1,
-  'lighter': #FFDDE1,
-  'extra-light': #FFDDE1,
+  'light': #FFEDEF,
+  'lighter': #FFF0F1,
+  'extra-light': #FFF5F6,
   'blank': #FFFAFA,
   'dark':#E88E9D,
   'darker':#EE9CA7,

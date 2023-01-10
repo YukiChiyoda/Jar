@@ -1,7 +1,7 @@
-@import url('./../public/style.scss');
+@import url('./../public/style-v2.scss');
 
 body {
-    overflow: hidden;
+    background-color: var(--el-fill-color);
 }
 
 .-page {
@@ -9,7 +9,7 @@ body {
 }
 
 .ocean {
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     top: 0;
     left: 0;
@@ -20,7 +20,7 @@ body {
 }
 
 .ocean .wave {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     width: 300vh;
@@ -115,5 +115,36 @@ body {
         bottom: 100vh;
         transform: translateX(-50px);
         opacity: 0.6;
+    }
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.avatar {
+    margin-top: 2px;
+    margin-left: 10px;
+    height: calc(var(--el-menu-item-height) - 2px);
+    /* Because the active button had a 2px bottom border. */
+    cursor: pointer;
+}
+
+.spaceholder {
+    flex-grow: 1;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.core {
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .avatar {
+        margin-left: 0px;
     }
 }
