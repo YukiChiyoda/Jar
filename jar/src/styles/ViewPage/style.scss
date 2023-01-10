@@ -143,8 +143,111 @@ body {
     margin-top: 100px;
 }
 
+.box {
+    width: 800px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: saturate(10px);
+    box-shadow: var(--el-box-shadow-fuller);
+    padding-bottom: 30px;
+}
+
+.title_A,
+.title_AA,
+.title_AAA,
+p,
+span,
+a {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.title,
+.subtitle,
+.detail {
+    text-align: center;
+}
+
+.title {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: var(--el-color-danger-light-5);
+}
+
+.subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--el-color-success-light-5);
+}
+
+.detail {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    margin-bottom: 50px;
+    color: var(--el-color-primary-light-7);
+}
+
+.title_A {
+    font-size: 24px;
+    line-height: 22px;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--el-color-danger-light-5);
+    border-left: 3px solid var(--el-color-danger-light-5);
+}
+
+.title_AA {
+    font-size: 22px;
+    line-height: 20px;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--el-text-color-primary);
+    border-left: 3px solid var(--el-text-color-primary);
+}
+
+.title_AAA {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--el-text-color-regular);
+    border-left: 3px solid var(--el-text-color-regular);
+}
+
+p {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--el-text-color-regular);
+}
+
+.headimg {
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.headimg img {
+    width: 100%;
+}
+
 @media screen and (max-width: 768px) {
     .avatar {
         margin-left: 0px;
+    }
+
+    .box {
+        width: 100%;
     }
 }
