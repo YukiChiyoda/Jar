@@ -13,7 +13,7 @@
 
 ## 🐱 Permission
 + The [frontend](https://github.com/YukiChiyoda/Jar) code is opensouced to those who obey [📕Yuki's Selfish License](./LICENSE).  
-+ The [backend](https://github.com/YukiChiyoda/Jar-Backend) code is private, but my friends can take a view. [📕Yuki's Unfair License](./LICENSE)  
++ The [backend](https://github.com/YukiChiyoda/Jar-Backend) code is private, but my friends can take a view. [🏘Backend Repository](https://github.com/YukiChiyoda/Jar-Backend)  
 + **Thank you for helping me find bugs or suggestions! [❤️Raise An Issue](https://github.com/YukiChiyoda/Jar/issues)**  
 
 ## ❓ Why English / Japanese / not Chinese?
