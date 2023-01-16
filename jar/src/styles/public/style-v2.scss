@@ -29,10 +29,9 @@ a {
 }
 */
 
-@media screen and (max-width: 768px) {
-    .el-aside {
-        display: none;
-    }
+.el-icon {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .el-menu {
